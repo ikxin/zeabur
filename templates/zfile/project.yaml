@@ -4,7 +4,7 @@ kind: Template
 metadata:
   name: ZFile
 spec:
-  description: ZFile 是一个在线文件目录的程序，支持多种存储引擎，用于在线映射和浏览。
+  description: ZFile is an online file directory program that supports multiple storage engines for online mapping and browsing.
   icon: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/zfile/icon.png
   coverImage: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/zfile/cover.png
   variables:
@@ -16,17 +16,38 @@ spec:
     - Storage
     - Tool
   readme: |-
-    # ZFile
-    ZFile 是一个在线文件目录和文件管理程序，支持对接多种存储引擎，能够帮助你实现云端文件管理和分享。
-
-    ## 特点
-    - 支持多种存储引擎
-    - 文件预览和在线播放
-    - 文件夹加密
-    - 在线文件管理
+    ## What is ZFile?
+    ZFile is an online cloud storage program (directory listing) suitable for individuals, allowing you to unify various types of storage sources into a single webpage for viewing, previewing, and maintenance. You no longer need to log into various web logins to manage files; now you only need to use ZFile. You just need to fill in the relevant information for the storage source, and other tasks like token refreshing and authorization are mostly automated, with comprehensive documentation to help you use it.
+    - Support for integration with storage sources such as S3, OneDrive, SharePoint, Google Drive, Duji Cloud, Youpai Cloud, local storage, FTP, SFTP, etc.
+    - Supports online browsing of images, playing audio and video, and file types such as text files, Office documents, and obj (3D) files.
+    ## Quick Start
+    Please refer to the deployment documentation: [https://docs.zfile.vip](https://docs.zfile.vip)
+    ## Online experience
+    [https://demo.zfile.vip](https://demo.zfile.vip)
+    ## Feature Preview
+    ### File List
+    ![File List](https://cdn.jun6.net/uPic/2022/08/13/0urMn8.png)
+    ### Gallery Mode
+    ![Image Preview](https://cdn.jun6.net/uPic/2022/08/13/d2J9aE.png)
+    ### Video Preview
+    ![Video Preview](https://cdn.jun6.net/uPic/2022/08/13/tBX00R.png)
+    ### Text Preview
+    ![Text Preview](https://cdn.jun6.net/uPic/2022/08/13/7dDy4G.png)
+    ### Audio Preview
+    ![Audio Preview](https://cdn.jun6.net/uPic/2022/08/13/N5bU1R.png)
+    ### PDF Preview
+    ![PDF Preview](https://cdn.jun6.net/uPic/2022/08/13/H327bV.png)
+    ### Office Preview
+    ![Office Preview](https://cdn.jun6.net/uPic/2022/08/27/RxeiqI.png)
+    ### 3D File Preview
+    ![3D File Preview](https://cdn.jun6.net/uPic/2022/08/29/8iszyh.png)
+    ### Generate Direct Link
+    ![Generate Direct Link](https://cdn.jun6.net/uPic/2022/08/13/zCX3xT.jpg)
+    ### Page Settings
+    ![Page Settings](https://cdn.jun6.net/uPic/2022/08/13/54nYv2.png)
   services:
-    - name: Customized
-      icon: https://cdn.zeabur.com/prebuilt.svg
+    - name: zfile
+      icon: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/zfile/icon.png
       template: PREBUILT_V2
       domainKey: PUBLIC_DOMAIN
       spec:
@@ -53,11 +74,143 @@ localization:
         name: 域名
         description: 你想将 ZFile 绑定在哪个域名上？
     readme: |-
-      # ZFile
-      ZFile 是一个在线文件目录和文件管理程序，支持对接多种存储引擎，能够帮助你实现云端文件管理和分享。
-
-      ## 特点
-      - 支持多种存储引擎
-      - 文件预览和在线播放
-      - 文件夹加密
-      - 在线文件管理
+      ## ZFile 是什么？
+      ZFile 是一个适用于个人的在线网盘(列目录)程序，可以将你各个存储类型的存储源，统一到一个网页中查看、预览、维护，再也不用去登录各种各样的网页登录后管理文件，现在你只需要在 ZFile 中使用。你只需要填写存储源相关信息，其他的令牌刷新，授权都是尽量自动化的，且有完善的文档帮助你使用。
+      - 支持对接 S3、OneDrive、SharePoint、Google Drive、多吉云、又拍云、本地存储、FTP、SFTP 等存储源
+      - 支持在线浏览图片、播放音视频，文本文件、Office、obj（3d）等文件类型。
+      ## 快速开始
+      请参考部署文档: [https://docs.zfile.vip](https://docs.zfile.vip)
+      ## 在线体验
+      [https://demo.zfile.vip](https://demo.zfile.vip)
+      ## 功能预览
+      ### 文件列表
+      ![文件列表](https://cdn.jun6.net/uPic/2022/08/13/0urMn8.png)
+      ### 画廊模式
+      ![图片预览](https://cdn.jun6.net/uPic/2022/08/13/d2J9aE.png)
+      ### 视频预览
+      ![视频预览](https://cdn.jun6.net/uPic/2022/08/13/tBX00R.png)
+      ### 文本预览
+      ![文本预览](https://cdn.jun6.net/uPic/2022/08/13/7dDy4G.png)
+      ### 音频预览
+      ![音频预览](https://cdn.jun6.net/uPic/2022/08/13/N5bU1R.png)
+      ### PDF 预览
+      ![PDF 预览](https://cdn.jun6.net/uPic/2022/08/13/H327bV.png)
+      ### Office 预览
+      ![Office 预览](https://cdn.jun6.net/uPic/2022/08/27/RxeiqI.png)
+      ### 3d 文件预览
+      ![3d 文件预览](https://cdn.jun6.net/uPic/2022/08/29/8iszyh.png)
+      ### 生成直链
+      ![生成直链](https://cdn.jun6.net/uPic/2022/08/13/zCX3xT.jpg)
+      ### 页面设置
+      ![页面设置](https://cdn.jun6.net/uPic/2022/08/13/54nYv2.png)
+  zh-TW:
+    description: ZFile 是一個線上檔案目錄的程式，支援多種儲存引擎，用於線上對應和瀏覽。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: 域名
+        description: 你想將 ZFile 綁定在哪個域名上？
+    readme: |-
+      ## ZFile 是什麼？
+      ZFile 是一個適用於個人的線上網盤(列目錄)程式，可以將你各個儲存類型的儲存源，統一到一個網頁中查看、預覽、維護，再也不用去登入各種各樣的網頁登入後管理檔案，現在你只需要在 ZFile 中使用。你只需要填寫儲存源相關資訊，其他的令牌刷新，授權都是盡量自動化的，且有完善的文件幫助你使用。
+      - 支援對接 S3、OneDrive、SharePoint、Google Drive、多吉雲、又拍雲、本地儲存、FTP、SFTP 等儲存源
+      - 支援線上瀏覽圖片、播放音視頻，文字檔案、Office、obj（3d）等檔案類型。
+      ## 快速開始
+      請參考部署文件: [https://docs.zfile.vip](https://docs.zfile.vip)
+      ## 線上體驗
+      [https://demo.zfile.vip](https://demo.zfile.vip)
+      ## 功能預覽
+      ### 檔案列表
+      ![檔案列表](https://cdn.jun6.net/uPic/2022/08/13/0urMn8.png)
+      ### 畫廊模式
+      ![圖片預覽](https://cdn.jun6.net/uPic/2022/08/13/d2J9aE.png)
+      ### 視頻預覽
+      ![視頻預覽](https://cdn.jun6.net/uPic/2022/08/13/tBX00R.png)
+      ### 文字預覽
+      ![文字預覽](https://cdn.jun6.net/uPic/2022/08/13/7dDy4G.png)
+      ### 音頻預覽
+      ![音頻預覽](https://cdn.jun6.net/uPic/2022/08/13/N5bU1R.png)
+      ### PDF 預覽
+      ![PDF 預覽](https://cdn.jun6.net/uPic/2022/08/13/H327bV.png)
+      ### Office 預覽
+      ![Office 預覽](https://cdn.jun6.net/uPic/2022/08/27/RxeiqI.png)
+      ### 3d 檔案預覽
+      ![3d 檔案預覽](https://cdn.jun6.net/uPic/2022/08/29/8iszyh.png)
+      ### 生成直鏈
+      ![生成直鏈](https://cdn.jun6.net/uPic/2022/08/13/zCX3xT.jpg)
+      ### 頁面設定
+      ![頁面設定](https://cdn.jun6.net/uPic/2022/08/13/54nYv2.png)
+  ja-JP:
+    description: ZFile はオンラインファイルディレクトリプログラムで、複数のストレージエンジンをサポートし、オンラインマッピングとブラウジングに使用します。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: ドメイン
+        description: ZFile をどのドメインにバインドしますか？
+    readme: |-
+      ## ZFile とは？
+      ZFile は個人向けのオンラインクラウドストレージ（ディレクトリリスト）プログラムで、様々なストレージソースを1つのウェブページで統合して閲覧、プレビュー、管理することができます。もう様々なウェブサイトにログインしてファイルを管理する必要はありません。ZFile だけで十分です。ストレージソースの関連情報を入力するだけで、トークンの更新や認証は可能な限り自動化され、詳細なドキュメントがあなたの使用をサポートします。
+      - S3、OneDrive、SharePoint、Google Drive、多吉クラウド、又拍クラウド、ローカルストレージ、FTP、SFTP などのストレージソースに対応
+      - 画像のオンライン閲覧、音声・動画の再生、テキストファイル、Office、obj（3D）などのファイルタイプをサポート
+      ## クイックスタート
+      デプロイメントドキュメントを参照してください: [https://docs.zfile.vip](https://docs.zfile.vip)
+      ## オンライン体験
+      [https://demo.zfile.vip](https://demo.zfile.vip)
+      ## 機能プレビュー
+      ### ファイルリスト
+      ![ファイルリスト](https://cdn.jun6.net/uPic/2022/08/13/0urMn8.png)
+      ### ギャラリーモード
+      ![画像プレビュー](https://cdn.jun6.net/uPic/2022/08/13/d2J9aE.png)
+      ### 動画プレビュー
+      ![動画プレビュー](https://cdn.jun6.net/uPic/2022/08/13/tBX00R.png)
+      ### テキストプレビュー
+      ![テキストプレビュー](https://cdn.jun6.net/uPic/2022/08/13/7dDy4G.png)
+      ### 音声プレビュー
+      ![音声プレビュー](https://cdn.jun6.net/uPic/2022/08/13/N5bU1R.png)
+      ### PDF プレビュー
+      ![PDF プレビュー](https://cdn.jun6.net/uPic/2022/08/13/H327bV.png)
+      ### Office プレビュー
+      ![Office プレビュー](https://cdn.jun6.net/uPic/2022/08/27/RxeiqI.png)
+      ### 3D ファイルプレビュー
+      ![3D ファイルプレビュー](https://cdn.jun6.net/uPic/2022/08/29/8iszyh.png)
+      ### 直接リンク生成
+      ![直接リンク生成](https://cdn.jun6.net/uPic/2022/08/13/zCX3xT.jpg)
+      ### ページ設定
+      ![ページ設定](https://cdn.jun6.net/uPic/2022/08/13/54nYv2.png)
+  es-ES:
+    description: ZFile es un programa de directorio de archivos en línea que admite múltiples motores de almacenamiento para mapeo y navegación en línea.
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: Dominio
+        description: ¿En qué dominio deseas vincular ZFile?
+    readme: |-
+      ## ¿Qué es ZFile?
+      ZFile es un programa de almacenamiento en la nube (listado de directorios) adecuado para individuos, que te permite unificar varios tipos de fuentes de almacenamiento en una sola página web para ver, previsualizar y mantener. Ya no necesitas iniciar sesión en varios sitios web para administrar archivos; ahora solo necesitas usar ZFile. Solo necesitas completar la información relevante para la fuente de almacenamiento, y otras tareas como la actualización de tokens y la autorización están mayormente automatizadas, con documentación completa para ayudarte a usarlo.
+      - Soporte para integración con fuentes de almacenamiento como S3, OneDrive, SharePoint, Google Drive, Duji Cloud, Youpai Cloud, almacenamiento local, FTP, SFTP, etc.
+      - Admite la navegación en línea de imágenes, reproducción de audio y video, y tipos de archivos como archivos de texto, documentos de Office y obj (3D).
+      ## Inicio Rápido
+      Consulta la documentación de implementación: [https://docs.zfile.vip](https://docs.zfile.vip)
+      ## Experiencia en línea
+      [https://demo.zfile.vip](https://demo.zfile.vip)
+      ## Vista previa de funciones
+      ### Lista de archivos
+      ![Lista de archivos](https://cdn.jun6.net/uPic/2022/08/13/0urMn8.png)
+      ### Modo Galería
+      ![Vista previa de imagen](https://cdn.jun6.net/uPic/2022/08/13/d2J9aE.png)
+      ### Vista previa de video
+      ![Vista previa de video](https://cdn.jun6.net/uPic/2022/08/13/tBX00R.png)
+      ### Vista previa de texto
+      ![Vista previa de texto](https://cdn.jun6.net/uPic/2022/08/13/7dDy4G.png)
+      ### Vista previa de audio
+      ![Vista previa de audio](https://cdn.jun6.net/uPic/2022/08/13/N5bU1R.png)
+      ### Vista previa de PDF
+      ![Vista previa de PDF](https://cdn.jun6.net/uPic/2022/08/13/H327bV.png)
+      ### Vista previa de Office
+      ![Vista previa de Office](https://cdn.jun6.net/uPic/2022/08/27/RxeiqI.png)
+      ### Vista previa de archivo 3D
+      ![Vista previa de archivo 3D](https://cdn.jun6.net/uPic/2022/08/29/8iszyh.png)
+      ### Generar enlace directo
+      ![Generar enlace directo](https://cdn.jun6.net/uPic/2022/08/13/zCX3xT.jpg)
+      ### Configuración de página
+      ![Configuración de página](https://cdn.jun6.net/uPic/2022/08/13/54nYv2.png)
