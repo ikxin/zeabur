@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=https://schema.zeabur.app/template.json
+apiVersion: zeabur.com/v1
+kind: Template
+metadata:
+  name: ZFile
+spec:
+  description: ZFile 是一个在线文件目录的程序，支持多种存储引擎，用于在线映射和浏览。
+  icon: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/zfile/icon.png
+  coverImage: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/zfile/cover.png
+  variables:
+    - key: PUBLIC_DOMAIN
+      type: DOMAIN
+      name: Domain
+      description: What is the domain you want for your ZFile?
+  tags:
+    - Storage
+    - Tool
+  readme: |-
+    # ZFile
+    ZFile 是一个在线文件目录和文件管理程序，支持对接多种存储引擎，能够帮助你实现云端文件管理和分享。
+
+    ## 特点
+    - 支持多种存储引擎
+    - 文件预览和在线播放
+    - 文件夹加密
+    - 在线文件管理
+  services:
+    - name: Customized
+      icon: https://cdn.zeabur.com/prebuilt.svg
+      template: PREBUILT_V2
+      domainKey: PUBLIC_DOMAIN
+      spec:
+        source:
+          image: zhaojun1998/zfile
+        ports:
+          - id: web
+            port: 8080
+            type: HTTP
+        volumes:
+          - id: db
+            dir: /root/.zfile-v4/db
+          - id: logs
+            dir: /root/.zfile-v4/logs
+          - id: file
+            dir: /data/file
+
+localization:
+  zh-CN:
+    description: ZFile 是一个在线文件目录的程序，支持多种存储引擎，用于在线映射和浏览。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: 域名
+        description: 你想将 ZFile 绑定在哪个域名上？
+    readme: |-
+      # ZFile
+      ZFile 是一个在线文件目录和文件管理程序，支持对接多种存储引擎，能够帮助你实现云端文件管理和分享。
+
+      ## 特点
+      - 支持多种存储引擎
+      - 文件预览和在线播放
+      - 文件夹加密
+      - 在线文件管理
