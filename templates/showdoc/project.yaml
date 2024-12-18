@@ -1,0 +1,197 @@
+# yaml-language-server: $schema=https://schema.zeabur.app/template.json
+apiVersion: zeabur.com/v1
+kind: Template
+metadata:
+  name: ShowDoc
+spec:
+  description: ShowDoc is an online API documentation and technical documentation tool that is very suitable for IT teams.
+  icon: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/showdoc/icon.png
+  coverImage: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/showdoc/cover.png
+  variables:
+    - key: PUBLIC_DOMAIN
+      type: DOMAIN
+      name: Domain
+      description: What is the domain you want for your ShowDoc?
+  tags:
+    - Website
+    - Starter
+  readme: |-
+    ## Configuration Information
+
+    Default Account: showdoc
+    Default Password: 123456
+    Data Storage Location: /showdoc_data/html
+
+    ## What is ShowDoc?
+
+    ShowDoc is a tool greatly applicable for IT teams to share documents online. It can promote communication efficiency between team members.
+
+    ## Key Features
+
+    ### API Documentation
+    - Create and maintain API documentation easily
+    - Support Markdown editing
+    - Template insertion for quick API interface documentation
+
+    ### Data Dictionary
+    - Document database structures and field definitions
+    - Easy to maintain and share with team members
+
+    ### Document Management
+    - Public and private project support
+    - Permission management for team collaboration
+    - Version history tracking
+    - Export to offline formats
+  services:
+    - name: showdoc
+      icon: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/showdoc/icon.png
+      template: PREBUILT_V2
+      domainKey: PUBLIC_DOMAIN
+      spec:
+        source:
+          image: star7th/showdoc
+        ports:
+          - id: web
+            port: 80
+            type: HTTP
+        volumes:
+          - id: data
+            dir: /var/www/html
+
+localization:
+  zh-CN:
+    description: ShowDoc 是一个适合 IT 团队的在线 API 文档和技术文档工具。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: 域名
+        description: 你想将 ShowDoc 绑定在哪个域名上？
+    readme: |-
+      ## 配置信息
+
+      默认账号：showdoc
+      默认密码：123456
+      数据存储位置：/showdoc_data/html
+
+      ## 什么是 ShowDoc？
+
+      ShowDoc 是一个非常适合 IT 团队在线分享文档的工具。它可以提高团队成员之间的沟通效率。
+
+      ## 主要功能
+
+      ### API 文档
+      - 轻松创建和维护 API 文档
+      - 支持 Markdown 编辑
+      - 模板插入，快速完成 API 接口文档
+
+      ### 数据字典
+      - 记录数据库结构和字段定义
+      - 易于维护并与团队成员共享
+
+      ### 文档管理
+      - 支持公开和私有项目
+      - 团队协作的权限管理
+      - 版本历史追踪
+      - 导出离线格式
+  zh-TW:
+    description: ShowDoc 是一個適合 IT 團隊的線上 API 文件和技術文件工具。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: 域名
+        description: 你想將 ShowDoc 綁定在哪個域名上？
+    readme: |-
+      ## 配置資訊
+
+      預設帳號：showdoc
+      預設密碼：123456
+      資料儲存位置：/showdoc_data/html
+
+      ## 什麼是 ShowDoc？
+
+      ShowDoc 是一個非常適合 IT 團隊線上分享文件的工具。它可以提高團隊成員之間的溝通效率。
+
+      ## 主要功能
+
+      ### API 文件
+      - 輕鬆建立和維護 API 文件
+      - 支援 Markdown 編輯
+      - 範本插入，快速完成 API 介面文件
+
+      ### 資料字典
+      - 記錄資料庫結構和欄位定義
+      - 易於維護並與團隊成員共享
+
+      ### 文件管理
+      - 支援公開和私有專案
+      - 團隊協作的權限管理
+      - 版本歷史追蹤
+      - 匯出離線格式
+  ja-JP:
+    description: ShowDoc は IT チーム向けのオンライン API ドキュメントおよび技術文書ツールです。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: ドメイン
+        description: ShowDoc をどのドメインにバインドしますか？
+    readme: |-
+      ## 設定情報
+
+      デフォルトアカウント：showdoc
+      デフォルトパスワード：123456
+      データ保存場所：/showdoc_data/html
+
+      ## ShowDoc とは？
+
+      ShowDoc は IT チームがオンラインでドキュメントを共有するのに最適なツールです。チームメンバー間のコミュニケーション効率を向上させることができます。
+
+      ## 主な機能
+
+      ### API ドキュメント
+      - API ドキュメントの作成と管理が容易
+      - Markdown 編集をサポート
+      - テンプレート挿入で API インターフェースドキュメントを素早く作成
+
+      ### データディクショナリ
+      - データベース構造とフィールド定義の文書化
+      - チームメンバーとの共有と維持が容易
+
+      ### ドキュメント管理
+      - パブリックおよびプライベートプロジェクトをサポート
+      - チームコラボレーションのための権限管理
+      - バージョン履歴の追跡
+      - オフライン形式へのエクスポート
+  es-ES:
+    description: ShowDoc es una herramienta de documentación API y documentación técnica en línea muy adecuada para equipos de TI.
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: Dominio
+        description: ¿En qué dominio deseas vincular ShowDoc?
+    readme: |-
+      ## Información de Configuración
+
+      Cuenta predeterminada: showdoc
+      Contraseña predeterminada: 123456
+      Ubicación de almacenamiento de datos: /showdoc_data/html
+
+      ## ¿Qué es ShowDoc?
+
+      ShowDoc es una herramienta muy aplicable para que los equipos de TI compartan documentos en línea. Puede promover la eficiencia de comunicación entre los miembros del equipo.
+
+      ## Características Principales
+
+      ### Documentación API
+      - Crear y mantener documentación API fácilmente
+      - Soporte para edición Markdown
+      - Inserción de plantillas para documentación rápida de interfaces API
+
+      ### Diccionario de Datos
+      - Documentar estructuras de base de datos y definiciones de campos
+      - Fácil de mantener y compartir con miembros del equipo
+
+      ### Gestión de Documentos
+      - Soporte para proyectos públicos y privados
+      - Gestión de permisos para colaboración en equipo
+      - Seguimiento del historial de versiones
+      - Exportación a formatos sin conexión
