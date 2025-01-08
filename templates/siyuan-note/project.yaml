@@ -1,0 +1,325 @@
+# yaml-language-server: $schema=https://schema.zeabur.app/template.json
+apiVersion: zeabur.com/v1
+kind: Template
+metadata:
+  name: SiYuan Note
+spec:
+  description: SiYuan is a privacy-first personal knowledge management system, support fine-grained block-level reference and Markdown WYSIWYG.
+  icon: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/siyuan-note/icon.png
+  coverImage: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/siyuan-note/cover.png
+  variables:
+    - key: PUBLIC_DOMAIN
+      type: DOMAIN
+      name: Domain
+      description: What is the domain you want for your SiYuan Note?
+    - key: AUTH_CODE
+      type: STRING
+      name: Auth Code
+      description: What is the auth code you want for your SiYuan Note?
+  tags:
+    - Website
+  readme: |-
+    ## 🚀 User Guide
+
+    The Auth Code is the access password used to access SiYuan Note. Please set a secure password.
+
+    ## 💡 Introduction
+
+    SiYuan is a privacy-first personal knowledge management system, support fine-grained block-level reference and Markdown WYSIWYG.
+
+    ![feature0.png](https://b3logfile.com/file/2024/01/feature0-1orBRlI.png)
+
+    ## 🔮 Features
+
+    Most features are free, even for commercial use.
+
+    * Content block
+      * Block-level reference and two-way links
+      * Custom attributes
+      * SQL query embed
+      * Protocol `siyuan://`
+    * Editor
+      * Block-style
+      * Markdown WYSIWYG
+      * List outline
+      * Block zoom-in
+      * Million-word large document editing
+      * Mathematical formulas, charts, flowcharts, Gantt charts, timing charts, staffs, etc.
+      * Web clipping
+      * PDF Annotation link
+    * Export
+      * Block ref and embed
+      * Standard Markdown with assets
+      * PDF, Word and HTML
+      * Copy to WeChat MP, Zhihu and Yuque
+    * Database
+      * Table view
+    * Flashcard spaced repetition
+    * AI writing and Q/A chat via OpenAI API
+    * Tesseract OCR 
+    * Multi-tab, drag and drop to split screen
+    * Template snippet
+    * JavaScript/CSS snippet
+    * Android/iOS/HarmonyOS App
+    * Docker deployment
+    * [API](https://github.com/siyuan-note/siyuan/blob/master/API.md)
+    * Community marketplace
+
+  services:
+    - name: siyuan-note
+      icon: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/siyuan-note/icon.png
+      template: PREBUILT_V2
+      domainKey: PUBLIC_DOMAIN
+      spec:
+        source:
+          image: b3log/siyuan
+          command:
+            - /bin/sh
+          args:
+            - -c
+            - /opt/siyuan/entrypoint.sh --workspace=/siyuan/workspace --accessAuthCode=${AUTH_CODE}
+        ports:
+          - id: web
+            port: 6806
+            type: HTTP
+        volumes:
+          - id: workspace
+            dir: /siyuan/workspace
+        env:
+          PUID:
+            default: '1001'
+          PGID:
+            default: '1002'
+
+localization:
+  zh-CN:
+    description: 思源笔记是一款隐私优先的个人知识管理系统，支持细粒度块级引用和 Markdown 所见即所得。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: 域名
+        description: 你想将思源笔记绑定在哪个域名上？
+      - key: AUTH_CODE
+        type: STRING
+        name: 访问码
+        description: 你想设置什么访问码来访问思源笔记？
+    readme: |-
+      ## 🚀 使用指南
+
+      访问码是用于访问思源笔记的密码。请设置一个安全的密码。
+
+      ## 💡 简介
+
+      思源笔记是一款隐私优先的个人知识管理系统，支持细粒度块级引用和 Markdown 所见即所得。
+
+      ![feature0.png](https://b3logfile.com/file/2024/01/feature0-1orBRlI.png)
+
+      ## 🔮 特性
+
+      大多数功能都是免费的，甚至可以用于商业用途。
+
+      * 内容块
+        * 块级引用和双向链接
+        * 自定义属性
+        * SQL 查询嵌入
+        * 协议 `siyuan://`
+      * 编辑器
+        * 块式编辑
+        * Markdown 所见即所得
+        * 列表大纲
+        * 块级放大
+        * 百万字级大文档编辑
+        * 数学公式、图表、流程图、甘特图、时序图、五线谱等
+        * 网页剪藏
+        * PDF 标注链接
+      * 导出
+        * 块引用和嵌入
+        * 带资源的标准 Markdown
+        * PDF、Word 和 HTML
+        * 复制到微信公众号、知乎和语雀
+      * 数据库
+        * 表格视图
+      * 闪卡间隔重复
+      * 通过 OpenAI API 进行 AI 写作和问答聊天
+      * Tesseract OCR 
+      * 多标签页，拖拽分屏
+      * 模板片段
+      * JavaScript/CSS 代码片段
+      * 安卓/iOS/鸿蒙应用
+      * Docker 部署
+      * [API](https://github.com/siyuan-note/siyuan/blob/master/API.md)
+      * 社区集市
+
+  zh-TW:
+    description: 思源筆記是一款隱私優先的個人知識管理系統，支持細粒度塊級引用和 Markdown 所見即所得。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: 域名
+        description: 你想將思源筆記綁定在哪個域名上？
+      - key: AUTH_CODE
+        type: STRING
+        name: 訪問碼
+        description: 你想設置什麼訪問碼來訪問思源筆記？
+    readme: |-
+      ## 🚀 使用指南
+
+      訪問碼是用於訪問思源筆記的密碼。請設置一個安全的密碼。
+
+      ## 💡 簡介
+
+      思源筆記是一款隱私優先的個人知識管理系統，支持細粒度塊級引用和 Markdown 所見即所得。
+
+      ![feature0.png](https://b3logfile.com/file/2024/01/feature0-1orBRlI.png)
+
+      ## 🔮 特性
+
+      大多數功能都是免費的，甚至可以用於商業用途。
+
+      * 內容塊
+        * 塊級引用和雙向鏈接
+        * 自定義屬性
+        * SQL 查詢嵌入
+        * 協議 `siyuan://`
+      * 編輯器
+        * 塊式編輯
+        * Markdown 所見即所得
+        * 列表大綱
+        * 塊級放大
+        * 百萬字級大文檔編輯
+        * 數學公式、圖表、流程圖、甘特圖、時序圖、五線譜等
+        * 網頁剪藏
+        * PDF 標註鏈接
+      * 導出
+        * 塊引用和嵌入
+        * 帶資源的標準 Markdown
+        * PDF、Word 和 HTML
+        * 複製到微信公眾號、知乎和語雀
+      * 數據庫
+        * 表格視圖
+      * 閃卡間隔重複
+      * 通過 OpenAI API 進行 AI 寫作和問答聊天
+      * Tesseract OCR 
+      * 多標籤頁，拖拽分屏
+      * 模板片段
+      * JavaScript/CSS 代碼片段
+      * 安卓/iOS/鴻蒙應用
+      * Docker 部署
+      * [API](https://github.com/siyuan-note/siyuan/blob/master/API.md)
+      * 社區集市
+
+  ja-JP:
+    description: 思源ノートはプライバシー重視の個人知識管理システムで、細かいブロックレベルの参照とMarkdownのWYSIWYGをサポートしています。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: ドメイン
+        description: 思源ノートをどのドメインにバインドしますか？
+      - key: AUTH_CODE
+        type: STRING
+        name: アクセスコード
+        description: 思源ノートにアクセスするためのコードを何に設定しますか？
+    readme: |-
+      ## 🚀 ユーザーガイド
+
+      アクセスコードは思源ノートにアクセスするためのパスワードです。安全なパスワードを設定してください。
+
+      ## 💡 はじめに
+
+      思源ノートはプライバシー重視の個人知識管理システムで、細かいブロックレベルの参照とMarkdownのWYSIWYGをサポートしています。
+
+      ![feature0.png](https://b3logfile.com/file/2024/01/feature0-1orBRlI.png)
+
+      ## 🔮 機能
+
+      ほとんどの機能は商用利用も含めて無料です。
+
+      * コンテンツブロック
+        * ブロックレベルの参照と双方向リンク
+        * カスタム属性
+        * SQLクエリ埋め込み
+        * プロトコル `siyuan://`
+      * エディタ
+        * ブロックスタイル
+        * Markdown WYSIWYG
+        * リストアウトライン
+        * ブロックズームイン
+        * 百万語レベルの大規模文書編集
+        * 数式、チャート、フローチャート、ガントチャート、タイミングチャート、五線譜など
+        * Webクリッピング
+        * PDFアノテーションリンク
+      * エクスポート
+        * ブロック参照と埋め込み
+        * アセット付き標準Markdown
+        * PDF、WordとHTML
+        * WeChat MP、知乎、語雀へのコピー
+      * データベース
+        * テーブルビュー
+      * フラッシュカード間隔反復
+      * OpenAI APIによるAI作文とQ&Aチャット
+      * Tesseract OCR 
+      * マルチタブ、ドラッグ＆ドロップで画面分割
+      * テンプレートスニペット
+      * JavaScript/CSSスニペット
+      * Android/iOS/HarmonyOSアプリ
+      * Dockerデプロイメント
+      * [API](https://github.com/siyuan-note/siyuan/blob/master/API.md)
+      * コミュニティマーケットプレイス
+
+  es-ES:
+    description: SiYuan es un sistema de gestión del conocimiento personal que prioriza la privacidad, con soporte para referencias a nivel de bloque y Markdown WYSIWYG.
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: Dominio
+        description: ¿En qué dominio deseas vincular SiYuan Note?
+      - key: AUTH_CODE
+        type: STRING
+        name: Código de Acceso
+        description: ¿Qué código de acceso deseas establecer para SiYuan Note?
+    readme: |-
+      ## 🚀 Guía de Usuario
+
+      El Código de Acceso es la contraseña utilizada para acceder a SiYuan Note. Por favor, establece una contraseña segura.
+
+      ## 💡 Introducción
+
+      SiYuan es un sistema de gestión del conocimiento personal que prioriza la privacidad, con soporte para referencias a nivel de bloque y Markdown WYSIWYG.
+
+      ![feature0.png](https://b3logfile.com/file/2024/01/feature0-1orBRlI.png)
+
+      ## 🔮 Características
+
+      La mayoría de las características son gratuitas, incluso para uso comercial.
+
+      * Bloque de contenido
+        * Referencias a nivel de bloque y enlaces bidireccionales
+        * Atributos personalizados
+        * Consultas SQL incrustadas
+        * Protocolo `siyuan://`
+      * Editor
+        * Estilo de bloques
+        * Markdown WYSIWYG
+        * Esquema de lista
+        * Zoom de bloques
+        * Edición de documentos grandes de millones de palabras
+        * Fórmulas matemáticas, gráficos, diagramas de flujo, diagramas de Gantt, diagramas de tiempo, pentagramas, etc.
+        * Recorte web
+        * Enlaces de anotaciones PDF
+      * Exportación
+        * Referencias y incrustaciones de bloques
+        * Markdown estándar con recursos
+        * PDF, Word y HTML
+        * Copiar a WeChat MP, Zhihu y Yuque
+      * Base de datos
+        * Vista de tabla
+      * Repetición espaciada de tarjetas
+      * Escritura AI y chat de preguntas y respuestas a través de la API de OpenAI
+      * OCR Tesseract
+      * Pestañas múltiples, arrastrar y soltar para dividir pantalla
+      * Fragmentos de plantillas
+      * Fragmentos de JavaScript/CSS
+      * Aplicación Android/iOS/HarmonyOS
+      * Implementación Docker
+      * [API](https://github.com/siyuan-note/siyuan/blob/master/API.md)
+      * Mercado comunitario
