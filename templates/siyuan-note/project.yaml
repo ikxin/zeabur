@@ -12,10 +12,6 @@ spec:
       type: DOMAIN
       name: Domain
       description: What is the domain you want for your SiYuan Note?
-    - key: AUTH_CODE
-      type: STRING
-      name: Auth Code
-      description: What is the auth code you want for your SiYuan Note?
   tags:
     - Website
   readme: |-
@@ -77,7 +73,12 @@ spec:
             - /bin/sh
           args:
             - -c
-            - /opt/siyuan/entrypoint.sh --workspace=/siyuan/workspace --accessAuthCode=${AUTH_CODE}
+            - /opt/siyuan/entrypoint.sh --workspace=/siyuan/workspace --accessAuthCode=${PASSWORD}
+        instructions:
+          - type: PASSWORD
+            content: ${PASSWORD}
+            title: Auth Code
+            category: Credentials
         ports:
           - id: web
             port: 6806
@@ -99,10 +100,6 @@ localization:
         type: DOMAIN
         name: 域名
         description: 你想将思源笔记绑定在哪个域名上？
-      - key: AUTH_CODE
-        type: STRING
-        name: 访问码
-        description: 你想设置什么访问码来访问思源笔记？
     readme: |-
       ## 🚀 使用指南
 
@@ -157,10 +154,6 @@ localization:
         type: DOMAIN
         name: 域名
         description: 你想將思源筆記綁定在哪個域名上？
-      - key: AUTH_CODE
-        type: STRING
-        name: 訪問碼
-        description: 你想設置什麼訪問碼來訪問思源筆記？
     readme: |-
       ## 🚀 使用指南
 
@@ -215,10 +208,6 @@ localization:
         type: DOMAIN
         name: ドメイン
         description: 思源ノートをどのドメインにバインドしますか？
-      - key: AUTH_CODE
-        type: STRING
-        name: アクセスコード
-        description: 思源ノートにアクセスするためのコードを何に設定しますか？
     readme: |-
       ## 🚀 ユーザーガイド
 
@@ -273,10 +262,6 @@ localization:
         type: DOMAIN
         name: Dominio
         description: ¿En qué dominio deseas vincular SiYuan Note?
-      - key: AUTH_CODE
-        type: STRING
-        name: Código de Acceso
-        description: ¿Qué código de acceso deseas establecer para SiYuan Note?
     readme: |-
       ## 🚀 Guía de Usuario
 
