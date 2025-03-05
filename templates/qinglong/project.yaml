@@ -1,0 +1,139 @@
+# yaml-language-server: $schema=https://schema.zeabur.app/template.json
+apiVersion: zeabur.com/v1
+kind: Template
+metadata:
+    name: Qinglong
+spec:
+    description: Timed task management platform supporting Python3, JavaScript, Shell, Typescript.
+    icon: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/qinglong/icon.png
+    coverImage: https://raw.githubusercontent.com/ikxin/zeabur/main/templates/qinglong/cover.png
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: Domain
+        description: What is the domain you want for your project?
+    tags:
+      - Monitoring
+      - Tool
+    readme: |-
+      ## What is Qinglong?
+      Timed task management platform supporting Python3, JavaScript, Shell, Typescript.
+      ## Features
+      - Support for multiple scripting languages (python3, javaScript, shell, typescript)
+      - Support online management of scripts, environment variables, configuration files
+      - Support online view task log
+      - Support second-level task setting
+      - Support system level notification
+      - Support dark mode
+      - Support cell phone operation
+      ## Links
+      - Demo: http://demo.ninesix.cc:4433
+      - Docs: https://qinglong.online
+    services:
+        - name: qinglong
+          icon: https://cdn.zeabur.com/prebuilt.svg
+          template: PREBUILT_V2
+          domainKey: PUBLIC_DOMAIN
+          spec:
+            source:
+                image: whyour/qinglong
+            ports:
+                - id: web
+                  port: 5700
+                  type: HTTP
+            volumes:
+                - id: data
+                  dir: /ql/data
+            env:
+                QlBaseUrl:
+                    default: /
+                    expose: false
+                QlPort:
+                    default: "5700"
+                    expose: false
+            configs: []
+localization:
+  zh-CN:
+    description: 青龙是一个支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: 域名
+        description: 你想将青龙绑定在哪个域名上？
+    readme: |-
+      ## 青龙是什么？
+      青龙是一个支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台。
+      ## 功能
+      - 支持多种脚本语言（python3、javaScript、shell、typescript）
+      - 支持在线管理脚本、环境变量、配置文件
+      - 支持在线查看任务日志
+      - 支持秒级任务设置
+      - 支持系统级通知
+      - 支持暗黑模式
+      - 支持手机操作
+      ## 链接
+      - 演示：http://demo.ninesix.cc:4433
+      - 文档：https://qinglong.online
+  zh-TW:
+    description: 青龍是一個支援 Python3、JavaScript、Shell、Typescript 的定時任務管理平台。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: 域名
+        description: 你想將青龍綁定在哪個域名上？
+    readme: |-
+      ## 青龍是什麼？
+      青龍是一個支援 Python3、JavaScript、Shell、Typescript 的定時任務管理平台。
+      ## 功能
+      - 支援多種腳本語言（python3、javaScript、shell、typescript）
+      - 支援線上管理腳本、環境變數、配置文件
+      - 支援線上查看任務日誌
+      - 支援秒級任務設置
+      - 支援系統級通知
+      - 支援暗黑模式
+      - 支援手機操作
+      ## 鏈接
+      - 演示：http://demo.ninesix.cc:4433
+      - 文件：https://qinglong.online
+  ja-JP:
+    description: キョンロンはPython3、JavaScript、Shell、Typescriptをサポートするスケジュールされたタスク管理プラットフォームです。
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: ドメイン
+        description: あなたのプロジェクトにどのドメインを使用したいですか？
+    readme: |-
+      ## キョンロンとは？
+      キョンロンはPython3、JavaScript、Shell、Typescriptをサポートするスケジュールされたタスク管理プラットフォームです。
+      ## 特徴
+      - 複数のスクリプト言語（python3、javaScript、shell、typescript）をサポート
+      - スクリプト、環境変数、構成ファイルのオンライン管理をサポート
+      - タスクログのオンライン表示をサポート
+      - タスクの秒単位設定をサポート
+      - システムレベルの通知をサポート
+      - ダークモードをサポート
+      - スマートフォン操作をサポート
+      ## リンク
+      - デモ：http://demo.ninesix.cc:4433
+      - ドキュメント：https://qinglong.online
+  es-ES:
+    description: Qinglong es una plataforma de gestión de tareas programadas que admite Python3, JavaScript, Shell, Typescript.
+    variables:
+      - key: PUBLIC_DOMAIN
+        type: DOMAIN
+        name: Dominio
+        description: ¿Qué dominio desea para su proyecto?
+    readme: |-
+      ## ¿Qué es Qinglong?
+      Qinglong es una plataforma de gestión de tareas programadas que admite Python3, JavaScript, Shell, Typescript.
+      ## Características
+      - Soporte para múltiples lenguajes de scripting (python3, javaScript, shell, typescript)
+      - Soporte para gestión en línea de scripts, variables de entorno, archivos de configuración
+      - Soporte para vista en línea de registros de tareas
+      - Soporte para configuración de tareas de segundo nivel
+      - Soporte para notificaciones de nivel de sistema
+      - Soporte para modo oscuro
+      - Soporte para operación móvil
+      ## Enlaces
+      - Demo: http://demo.ninesix.cc:4433
+      - Documentos: https://qinglong.online
